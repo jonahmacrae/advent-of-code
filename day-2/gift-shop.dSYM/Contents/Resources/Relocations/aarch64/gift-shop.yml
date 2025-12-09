@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/jonah.l.macrae/Code/training-projects/advent-of-code/day-2/gift-shop'
+relocations:     []
+...
