@@ -24,11 +24,29 @@ int main(){
 
 	long long invalidCount = 0;
 
-    for (int i = 0; i < ranges.size(); i++) {
-        for (long long j = ranges[i].first; j <= ranges[i].second; j++) {
-            
-        }
-    }
+	for (int i = 0; i < ranges.size(); i++) {
+		for (long long j = ranges[i].first; j <= ranges[i].second; j++) {
+			std::string jString = std::to_string(j);
+
+			for (int k = 1; k <= jString.length()/2; k++) {
+				if (jString.length() % k != 0) {
+					continue;
+				}
+
+				std::string pattern = jString.substr(0, k);
+				std::string builtString = "";
+
+				for (int l = 0; l < jString.length() / k; l++) {
+					builtString += pattern;
+				}
+
+				if (builtString == jString) {
+					invalidCount += j;
+					break;
+				}
+			}
+		}
+	}
 
 	std::cout << "The total of invalid ids is " << invalidCount << std::endl;
 	return 0;
